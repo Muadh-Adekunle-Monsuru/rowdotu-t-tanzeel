@@ -1,65 +1,97 @@
 import Image from "next/image";
+import { HeroSlideshow } from "@/components/HeroSlideshow";
+import { PhotoGallery } from "@/components/PhotoGallery";
+import { HAFLAH_URL, LOGO_SRC, SCHOOL } from "@/lib/site";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex min-h-full flex-col">
+      <header className="relative flex min-h-[70vh] flex-col items-center justify-center px-6 py-16 text-center text-white">
+        <HeroSlideshow />
+
+        <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-5">
+          <div className="overflow-hidden rounded-full ring-4 ring-[#c9a227]/80 shadow-lg">
+            <Image
+              src={LOGO_SRC}
+              alt={`${SCHOOL.shortName} logo`}
+              width={120}
+              height={120}
+              className="h-28 w-28 object-cover"
+              priority
+            />
+          </div>
+
+          <p className="text-sm font-medium uppercase tracking-widest text-[#e8c547]">
+            {SCHOOL.location}
+          </p>
+
+          <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+            {SCHOOL.name}
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="max-w-lg text-lg text-white/90 italic">
+            {SCHOOL.tagline}
+          </p>
+
+          <div className="mt-2 rounded-xl border border-[#c9a227]/50 bg-white/10 px-6 py-4 backdrop-blur-sm">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[#e8c547]">
+              Website under construction
+            </p>
+            <p className="mt-1 text-sm text-white/80">
+              Our full site is coming soon. In the meantime, explore moments
+              from our community below.
+            </p>
+          </div>
+
+          <a
+            href={HAFLAH_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center justify-center rounded-full bg-[#c9a227] px-8 py-3 text-sm font-semibold text-[#0c1f4a] shadow-md transition hover:bg-[#e8c547] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0c1f4a]"
+          >
+            View our past Haflah photos
+          </a>
+        </div>
+      </header>
+
+      <section className="bg-[#f4f6fb] px-6 py-14">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-serif text-2xl font-bold text-[#0c1f4a]">
+            Moments from our madrasah
+          </h2>
+          <p className="mx-auto mt-2 max-w-xl text-center text-sm text-[#0c1f4a]/70">
+            Glimpses from Rowdotu-T-Tanzeel Walimah &amp; Haflah — tap a photo to
+            enlarge.
+          </p>
+          <div className="mt-8">
+            <PhotoGallery />
+          </div>
+        </div>
+      </section>
+
+      <footer className="mt-auto bg-[#0c1f4a] px-6 py-10 text-white">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center text-sm">
+          <p className="font-serif text-lg font-semibold text-[#e8c547]">
+            {SCHOOL.shortName}
+          </p>
+          <p>{SCHOOL.address}</p>
+          <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1">
+            {SCHOOL.phones.map((phone) => (
+              <li key={phone}>
+                <a
+                  href={`tel:${phone}`}
+                  className="underline-offset-2 hover:text-[#e8c547] hover:underline"
+                >
+                  {phone}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs text-white/50">
+            &copy; {new Date().getFullYear()} {SCHOOL.name}
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </footer>
     </div>
   );
 }
