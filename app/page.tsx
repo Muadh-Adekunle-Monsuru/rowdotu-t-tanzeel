@@ -1,13 +1,46 @@
 import Image from "next/image";
 import { HeroSlideshow } from "@/components/HeroSlideshow";
+import {
+  AboutSection,
+  AimsSection,
+  ContactSection,
+  DepartmentsSection,
+  LaurelsSection,
+  MissionVisionSection,
+  ProgramsSection,
+  ScheduleSection,
+} from "@/components/MadrasahSections";
 import { PhotoGallery } from "@/components/PhotoGallery";
+import { SectionHeading } from "@/components/SectionHeading";
 import { HAFLAH_URL, LOGO_SRC, SCHOOL } from "@/lib/site";
+
+const NAV_LINKS = [
+  { href: "#about", label: "About" },
+  { href: "#programs", label: "Programs" },
+  { href: "#contact", label: "Contact" },
+  { href: "#gallery", label: "Gallery" },
+] as const;
 
 export default function Home() {
   return (
     <div className="flex min-h-full flex-col">
-      <header className="relative flex min-h-[70vh] flex-col items-center justify-center px-6 py-16 text-center text-white">
+      <header className="relative flex min-h-[85vh] flex-col items-center justify-center px-6 py-16 text-center text-white">
         <HeroSlideshow />
+
+        <nav
+          aria-label="Primary"
+          className="absolute top-0 z-20 flex w-full flex-wrap items-center justify-center gap-x-6 gap-y-2 px-6 py-4 text-xs font-medium uppercase tracking-wide"
+        >
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-white/90 transition hover:text-[#e8c547]"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
 
         <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-5">
           <div className="overflow-hidden rounded-full ring-4 ring-[#c9a227]/80 shadow-lg">
@@ -29,19 +62,17 @@ export default function Home() {
             {SCHOOL.name}
           </h1>
 
+          <p
+            className="font-serif text-lg text-[#e8c547]/95 sm:text-xl"
+            dir="rtl"
+            lang="ar"
+          >
+            {SCHOOL.nameArabic}
+          </p>
+
           <p className="max-w-lg text-lg text-white/90 italic">
             {SCHOOL.tagline}
           </p>
-
-          <div className="mt-2 rounded-xl border border-[#c9a227]/50 bg-white/10 px-6 py-4 backdrop-blur-sm">
-            <p className="text-sm font-semibold uppercase tracking-wide text-[#e8c547]">
-              Website under construction
-            </p>
-            <p className="mt-1 text-sm text-white/80">
-              Our full site is coming soon. In the meantime, explore moments
-              from our community below.
-            </p>
-          </div>
 
           <a
             href={HAFLAH_URL}
@@ -54,15 +85,21 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="bg-[#f4f6fb] px-6 py-14">
+      <AboutSection />
+      <MissionVisionSection />
+      <AimsSection />
+      <ProgramsSection />
+      <ScheduleSection />
+      <DepartmentsSection />
+      <LaurelsSection />
+      <ContactSection />
+
+      <section id="gallery" className="bg-[#f4f6fb] px-6 py-14 scroll-mt-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-serif text-2xl font-bold text-[#0c1f4a]">
-            Moments from our madrasah
-          </h2>
-          <p className="mx-auto mt-2 max-w-xl text-center text-sm text-[#0c1f4a]/70">
-            Glimpses from Rowdotu-T-Tanzeel Walimah &amp; Haflah — tap a photo to
-            enlarge.
-          </p>
+          <SectionHeading
+            title="Moments from our madrasah"
+            subtitle="Glimpses from Rowdotu-T-Tanzeel Walimah & Haflah — tap a photo to enlarge."
+          />
           <div className="mt-8">
             <PhotoGallery />
           </div>
@@ -74,7 +111,18 @@ export default function Home() {
           <p className="font-serif text-lg font-semibold text-[#e8c547]">
             {SCHOOL.shortName}
           </p>
-          <p>{SCHOOL.address}</p>
+          <p className="text-white/80">{SCHOOL.address}</p>
+          <p>
+            <a
+              href={`mailto:${SCHOOL.email}`}
+              className="underline-offset-2 hover:text-[#e8c547] hover:underline"
+            >
+              {SCHOOL.email}
+            </a>
+          </p>
+          <p className="text-xs text-white/60">
+            CAC Registration No: {SCHOOL.cacRegistration}
+          </p>
           <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1">
             {SCHOOL.phones.map((phone) => (
               <li key={phone}>

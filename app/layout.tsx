@@ -16,7 +16,7 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: "Rowdotu-T-Tanzeel | Tahfeez & Arabic School — Ile-Ife",
   description:
-    "Rowdotu-T-Tanzeel Tahfeez & Arabic School in Ile-Ife, Osun State. Website under construction.",
+    "Rowdotu-T-Tanzeel Tahfeez and Arabic School — Quranic memorization, Arabic studies, and NBAIS examinations in Ile-Ife, Osun State, since 2013.",
   openGraph: {
     title: "Rowdotu-T-Tanzeel Tahfeez & Arabic School",
     description: "Nurturing Faith, Building Knowledge, Shaping the Future",
