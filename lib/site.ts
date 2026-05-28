@@ -26,8 +26,8 @@ export const VISION =
 
 export const ABOUT_PARAGRAPHS = [
   "Since 2013 in Ile-Ife, Rowdotu-T-Tanzeel has offered an academic path to Quranic recitation, memorization, and Arabic, shaped by the local Muslim community's call for rigorous tahfeez education and strong character.",
-  "We have trained 150+ recitation specialists, 72 Idaadiyyah Huffadh, and 17 Thannawiyyah graduates; alumni have continued their studies in Egypt, Asia, Europe, and beyond. We are the first government-approved Arabic school in Ile-Ife under NBAIS (comparable to WAEC/NECO), with 10 students sitting the exam in 2024.",
-  "Our seven-year program blends Islamic and conventional studies, so graduates can earn Idaady, BECE, and NBAIS certificates and pursue university admission in Nigeria.",
+  "We have trained 150+ recitation specialists, 96 Idaadiyyah Huffadh, and 23 Thannawiyyah graduates; alumni have continued their studies in Egypt, Asia, Europe, and beyond. We are the first government-approved Arabic school in Ile-Ife under NBAIS (comparable to WAEC/NECO), with 10 students sitting the exam in 2024.",
+  "Our seven-year program blends Islamic and conventional studies, so graduates can earn Idaady, BECE (Basic Education Certificate Examination), JAISSE (Junior Arabic and Islamic Studies Examination) and NBAIS (National Board for Arabic and Islamic Studies) certificates and pursue university admission in Nigeria.",
 ] as const;
 
 export const AIMS = [
@@ -40,7 +40,7 @@ export const AIMS = [
 
 export const PROGRAMS = [
   "Quran Memorization and Idaadiyyah program — completed after three (3) years, plus one (1) year intensive coaching for BECE / Junior WAEC examination.",
-  "Two years intensive Thannawiyyah program and NBAIS (National Board for Arabic and Islamic Studies) examination, plus one (1) year intensive coaching for WAEC / NECO and related exams.",
+  "A three-year intensive Thannawiyyah program leading to the NBAIS certification, which is equivalent to WAEC/NECO and covers all the same standard subjects.",
   "Weekend classes",
   "Holiday Tahfeez and Arabic class",
   "Special tahfeez and Arabic class (part-time)",
