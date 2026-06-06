@@ -6,7 +6,7 @@ export const SCHOOL = {
   location: "Ile-Ife, Osun State, Nigeria",
   address:
     "House 2, Oremeji Street, Near OAUTHC, Ile-Ife, Osun State, Nigeria",
-  email: "-",
+  email: "support@rowdotu-t-tanzeel.org.ng",
   cacRegistration: "8282811",
   phones: ["08057047244", "08067081997", "08138367810"] as const,
   established: 2013,
@@ -39,7 +39,7 @@ export const AIMS = [
 ] as const;
 
 export const PROGRAMS = [
-  "Quran Memorization and Idaadiyyah program — completed after three (3) years, plus one (1) year intensive coaching for BECE / Junior WAEC examination.",
+  "Quran Memorization and Idaadiyyah program — typically completed in a minimum of three (3) years; however, the Qur'an memorization component may require additional time depending on the student's progress and retention ability. This is followed by one (1) year intensive coaching for BECE / Junior Arabic and Islamic Studies examination.",
   "A three-year intensive Thannawiyyah program leading to the NBAIS certification, which is equivalent to WAEC/NECO and covers all the same standard subjects.",
   "Weekend classes",
   "Holiday Tahfeez and Arabic class",
